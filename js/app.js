@@ -50,22 +50,19 @@ const loadPhoneDetails = detail => {
     .then(data => displaySinglePhoneDetail(data.data))
 }
 const displaySinglePhoneDetail = phone => {
-  console.log(phone);
+  // console.log(phone);
   const phoneDetails = document.getElementById('single-phone-detail');
-  const div = createElement('div');
-  div.classList.add('card');
+  const div = document.createElement('div')
+  div.classList.add('card')
+  div.classList.add("col-lg-4")
+  div.classList.add("col-sm-12")
   div.innerHTML = `
-      <div class="row g-0">
-          <div class="col-md-4">
-                <img src="..." class="img-fluid rounded-start" alt="...">
-            </div>
-            <div class="col-md-8">
-              <div class="card-body">
-                  <h5 class="card-title">Card title</h5>
-                    <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                    <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-                </div>
-            </div>
+  <img src="..." class="img-fluid rounded-start" alt="...">
+  <div class="card-body">
+        <h5 class="card-title">Card title</h5>
+        <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+        <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
       </div>
   `
+  phoneDetails.appendChild(div)
 }
