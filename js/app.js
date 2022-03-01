@@ -41,7 +41,7 @@ const displaySearchResult = phone => {
         <div class="card-body">
           <h5 class="card-title">${phones.brand}</h5>
           <p class="card-text">${phones.phone_name}</p>
-          <button class="btn btn-primary" onclick="loadPhoneDetails('${phones.slug}')">Show Detail</button>
+          <button class="btn btn-dark" onclick="loadPhoneDetails('${phones.slug}')">Show Detail</button>
         </div >
       </div >
   `
@@ -63,6 +63,7 @@ const loadPhoneDetails = detail => {
 const displaySinglePhoneDetail = phone => {
   // console.log(phone);
   const phoneDetails = document.getElementById('single-phone-detail');
+  phoneDetails.textContent = '';
   const div = document.createElement('div')
   div.classList.add('card')
   div.innerHTML = `
@@ -72,6 +73,7 @@ const displaySinglePhoneDetail = phone => {
     </div>
     <div class="col-lg-4 col-sm-12">
         <div class="mt-3 p-3">
+            <h2 class="text-center pb-3">Main Feature</h2>
             <h5 class="card-text"> Brand: ${phone.brand ? phone.brand : 'Brand Name Not Found'}</h5>
             <hr>
             <h5 class="card-text"> Name: ${phone.name ? phone.name : 'Phone Name Not Found'}</h5>
@@ -88,7 +90,8 @@ const displaySinglePhoneDetail = phone => {
             <hr>
             <h5 class="card-text"> Sensors: ${phone.mainFeatures.sensors ? phone.mainFeatures.sensors : 'Sensors Name Not Found'}</h5>
             <hr>
-            <h3>Other Feature</h3>
+            <h2 class="text-center pb-3">Other Feature</h2>
+            <hr>
             <h5 class="card-text"> WLAN: ${phone?.others?.WLAN ? phone.others.WLAN : 'WLAN Name Not Found'}</h5>
             <hr>
             <h5 class="card-text"> Bluetooth: ${phone?.others?.Bluetooth ? phone.others.Bluetooth : 'Bluetooth Name Not Found'}</h5>

@@ -1,3 +1,16 @@
+/* Common style  */
+body{
+    background: #F1EEEA;
+}
+h1{
+    /* color: #1C1F23; */
+    color: #535252;
+}
+h2{
+    color: #535252;
+}
+
+/* Single Phone Detail Section Image  */
 #single-phone-detail img{
     width: 50%;
 }
