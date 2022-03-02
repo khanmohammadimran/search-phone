@@ -4,7 +4,7 @@ const searchPhone = () => {
   // Error Handling
   const error = document.getElementById('error')
   const searchText = searchfield.value;
-  if (searchText == "" || searchText > 0 || searchText < 0) {
+  if (searchText == "" || searchText >= 0 || searchText <= 0) {
     error.innerText = 'Please Write a Phone Name'
   }
   else {
@@ -61,7 +61,6 @@ const loadPhoneDetails = detail => {
     .then(data => displaySinglePhoneDetail(data.data))
 }
 const displaySinglePhoneDetail = phone => {
-  // console.log(phone);
   const phoneDetails = document.getElementById('single-phone-detail');
   phoneDetails.textContent = '';
   const div = document.createElement('div')
